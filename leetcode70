@@ -1,0 +1,25 @@
+class Solution {
+    public int minDominoRotations(int[] tops, int[] bottoms) {
+        int candidate1 = tops[0];
+        int candidate2 = bottoms[0];
+        
+        int result = check(tops, bottoms, candidate1);
+        if (result != -1) return result;
+        return check(tops, bottoms, candidate2);
+    }
+
+    private int check(int[] tops, int[] bottoms, int target) {
+        int topRotations = 0;
+        int bottomRotations = 0;
+        
+        for (int i = 0; i < tops.length; i++) {
+            if (tops[i] != target && bottoms[i] != target) {
+                return -1;  // impossible
+            }
+            if (tops[i] != target) topRotations++;
+            if (bottoms[i] != target) bottomRotations++;
+        }
+        
+        return Math.min(topRotations, bottomRotations);
+    }
+}
