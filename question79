@@ -1,0 +1,54 @@
+class Solution {
+    private static final int MOD = 1_000_000_007;
+
+    public int colorTheGrid(int m, int n) {
+        List<int[]> validPatterns = new ArrayList<>();
+        generatePatterns(m, new int[m], 0, validPatterns);
+
+        int size = validPatterns.size();
+        boolean[][] adj = new boolean[size][size];
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                adj[i][j] = isCompatible(validPatterns.get(i), validPatterns.get(j));
+            }
+        }
+
+        long[] dp = new long[size];
+        for (int i = 0; i < size; i++) dp[i] = 1;
+
+        for (int col = 1; col < n; col++) {
+            long[] newDp = new long[size];
+            for (int i = 0; i < size; i++) {
+                if (dp[i] == 0) continue;
+                for (int j = 0; j < size; j++) {
+                    if (adj[i][j]) newDp[j] = (newDp[j] + dp[i]) % MOD;
+                }
+            }
+            dp = newDp;
+        }
+
+        long result = 0;
+        for (long count : dp) result = (result + count) % MOD;
+        return (int) result;
+    }
+
+    private void generatePatterns(int m, int[] pattern, int pos, List<int[]> validPatterns) {
+        if (pos == m) {
+            validPatterns.add(pattern.clone());
+            return;
+        }
+        for (int color = 0; color < 3; color++) {
+            if (pos == 0 || color != pattern[pos - 1]) {
+                pattern[pos] = color;
+                generatePatterns(m, pattern, pos + 1, validPatterns);
+            }
+        }
+    }
+
+    private boolean isCompatible(int[] col1, int[] col2) {
+        for (int i = 0; i < col1.length; i++) {
+            if (col1[i] == col2[i]) return false;
+        }
+        return true;
+    }
+}
