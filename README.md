@@ -7,6 +7,7 @@
 | ------- |
 | [2897-apply-operations-on-array-to-maximize-sum-of-squares](https://github.com/manas541/leetcode_series/tree/master/2897-apply-operations-on-array-to-maximize-sum-of-squares) |
 | [3660-jump-game-ix](https://github.com/manas541/leetcode_series/tree/master/3660-jump-game-ix) |
+| [3727-maximum-alternating-sum-of-squares](https://github.com/manas541/leetcode_series/tree/master/3727-maximum-alternating-sum-of-squares) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -46,6 +47,7 @@
 | ------- |
 | [0678-valid-parenthesis-string](https://github.com/manas541/leetcode_series/tree/master/0678-valid-parenthesis-string) |
 | [2897-apply-operations-on-array-to-maximize-sum-of-squares](https://github.com/manas541/leetcode_series/tree/master/2897-apply-operations-on-array-to-maximize-sum-of-squares) |
+| [3727-maximum-alternating-sum-of-squares](https://github.com/manas541/leetcode_series/tree/master/3727-maximum-alternating-sum-of-squares) |
 ## Hash Table
 |  |
 | ------- |
@@ -54,4 +56,8 @@
 |  |
 | ------- |
 | [2897-apply-operations-on-array-to-maximize-sum-of-squares](https://github.com/manas541/leetcode_series/tree/master/2897-apply-operations-on-array-to-maximize-sum-of-squares) |
+## Sorting
+|  |
+| ------- |
+| [3727-maximum-alternating-sum-of-squares](https://github.com/manas541/leetcode_series/tree/master/3727-maximum-alternating-sum-of-squares) |
 <!---LeetCode Topics End-->
